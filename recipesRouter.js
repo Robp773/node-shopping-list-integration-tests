@@ -14,16 +14,10 @@ Recipes.create(
 Recipes.create(
   'milkshake', ['2 tbsp cocoa', '2 cups vanilla ice cream', '1 cup milk']);
 
-// send back JSON representation of all recipes
-// on GET requests to root
 router.get('/', (req, res) => {
   res.json(Recipes.get());
 });
 
-
-// when new recipe added, ensure has required fields. if not,
-// log error and return 400 status code with hepful message.
-// if okay, add new item, and return it with a status 201.
 router.post('/', jsonParser, (req, res) => {
   // ensure `name` and `budget` are in request body
   const requiredFields = ['name', 'ingredients'];
