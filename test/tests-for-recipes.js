@@ -62,8 +62,6 @@ describe('Recipes', function(){
 		.then(function(res){
 			 res.body.should.deep.equal(data);
 		})
-            
-		
 		})
 	})
 
